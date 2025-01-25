@@ -1,0 +1,448 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>INOJOSA SOUL - Música Romántica y Sensual</title>
+
+         <!-- Font Awesome for social icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+        <meta name="description" content="Descubre la música de INOJOSA SOUL, una fusión de bachata moderna y poesía romántica. Letras apasionadas y melodías que enamoran.">
+        <meta name="keywords" content="INOJOSA SOUL, bachata, música romántica, letras poéticas, música sensual, artistas de bachata">
+        <meta name="author" content="INOJOSA SOUL">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="INOJOSA SOUL - Música Romántica y Sensual">
+        <meta property="og:description" content="Explora la música de INOJOSA SOUL, donde el amor y la poesía se fusionan en ritmos de bachata moderna.">
+        <meta property="og:image" content="https://www.tudominio.com/ruta/a/tu-imagen.jpg">
+        <meta property="og:url" content="https://www.tudominio.com">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="INOJOSA SOUL - Música Romántica y Sensual">
+        <meta name="twitter:description" content="Disfruta de la música de INOJOSA SOUL, una mezcla única de bachata y poesía romántica.">
+        <meta name="twitter:image" content="https://www.tudominio.com/ruta/a/tu-imagen.jpg">
+        <link rel="canonical" href="https://www.tudominio.com">
+        <link rel="icon" type="image/x-icon" href="/imagenes/FAVICON/letras-de-canciones.png">
+        <link rel="stylesheet" href="/css/musica.css">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e1e;
+            padding: 20px;
+        }
+
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .song-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .song-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            background-color: #1DB954;
+            color: white;
+        }
+
+        .info-btn {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .song-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1DB954; /* Spotify green for hover effect */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img src="imagenes/LOGO/inojosa_soul.webp" alt="Logo" width="80" height="80">
+                <h1>INOJOSA SOUL</h1>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/haroldinojosa" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/haroldic/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </header>
+
+
+        <div class="song-grid">
+            <div class="song-card">
+                <h2>Loba Disfrazada</h2>
+                <audio id="audioPlayer1" src="AUDIO/31_Loba_Disfrazada.mp3" controls style="width:100%"></audio>
+                <div class="song-buttons">
+                    <button class="btn info-btn" onclick="showModal('description1')">ℹ️ Descripción</button>
+                    <button class="btn info-btn" onclick="showModal('lyrics1')">📝 Letra</button>
+                </div>
+            </div>
+
+
+            <div class="song-card">
+                <h2>Reina de mis Ritmos</h2>
+                <audio id="audioPlayer2" src="AUDIO/30_Reina_de_mis_Ritmos.mp3" controls style="width:100%"></audio>
+                <div class="song-buttons">
+                    <button class="btn info-btn" onclick="showModal('description2')">ℹ️ Descripción</button>
+                    <button class="btn info-btn" onclick="showModal('lyrics2')">📝 Letra</button>
+                </div>
+            </div>
+
+
+            <div class="song-card">
+                <h2>En tus imagenes</h2>
+                <audio id="audioPlayer3" src="AUDIO/29_En_tus_imagenes_bachata.mp3" controls style="width:100%"></audio>
+                <div class="song-buttons">
+                    <button class="btn info-btn" onclick="showModal('description3')">ℹ️ Descripción</button>
+                    <button class="btn info-btn" onclick="showModal('lyrics3')">📝 Letra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales para la primera canción -->
+    <div id="description1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Loba Disfrazada</h2>
+            <p>La canción es una advertencia sobre los peligros de confiar ciegamente en las apariencias y una reflexión
+                sobre el crecimiento personal después de una decepción amorosa. A través de una narrativa detallada y
+                emotiva, el protagonista logra transmitir su dolor, pero también su determinación de no dejarse vencer
+                por la traición. Es una historia universal que resuena con cualquiera que haya experimentado el engaño
+                en el amor.
+
+                está escrita para ser interpretada en estilo vallenato, un género musical colombiano conocido por su
+                narrativa emotiva y su uso de acordeón, caja y guacharaca. Este estilo es ideal para contar historias de
+                amor, desamor y vida cotidiana, lo que encaja perfectamente con el tema de la canción.</p>
+        </div>
+    </div>
+    <div id="lyrics1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Reina de mis Ritmos</h2>
+            <pre>
+                [Verso 1]
+                La conocí en, en una aplicación de citas
+                 donde el amor se disfraza
+                su foto me llevó a la ilusión
+                su sonrisa tierna, pero su cuerpo engañó
+                pequeña y peligrosa, como un veneno en flor
+                En sus dulces palabras, mi corazón se perdió,
+                sin saber que su amor, era un secreto de dos
+                
+                Me hizo amigo de sus hijos, como un hombre bueno,
+                Llegaba a mi cama cuando el mundo dormía
+                Me llenó la vida de bromas y de risas
+                pero su mirada escondía la traición.
+                
+                [Coro]
+                ¡Ay, quién lo diría! Esa oveja era una loba
+                disfrazada de ternura, me robó la razón
+                Mientras decía que en mí no confiaba
+                era ella quien vivía en doble vida
+                
+                [Verso 2]
+                En mi casa todo le olía a otra mujer
+                los celos eran su teatro para esconder su papel
+                Un fin de semana se perdió entre las sombras
+                "Con amigas", decía, pero la verdad se asoma
+                
+                Cuando la llevé a su casa aquella mañana
+                y allí, en la puerta, un hombre la esperaba.
+                Su semblante se borró, su mirada se quebró,
+                Se bajó del auto sin siquiera despedirse
+                y su historia falsa al fin se derrumbó
+                
+                [Coro]
+                ¡Ay, quién lo diría! Esa oveja era una loba
+                disfrazada de ternura, me robó la razón
+                Mientras decía que en mí no confiaba
+                era ella quien vivía en doble traición
+                
+                [Puente]
+                ¡Qué decepción! Ahora entiendo la verdad
+                el cacho era yo, y ella se fue sin mirar atrás
+                Mis mensajes quedaron flotando en el vacío
+                la cara jamás mostró, desapareció sin explicación,
+                
+                Intenté conquistarla, pero solo me hizo caer,
+                fui otro de sus juegos, un peón en su ajedrez.
+                Me dejó sin explicación, sin un adiós,
+                como un barco a la deriva, perdido en su voz.
+                
+                
+                [Coro final]
+                ¡Ay, quién lo diría! Esa oveja era una loba
+                disfrazada de ternura, me robó la razón
+                Mientras decía que en mí no confiaba
+                era ella quien vivía en doble traición
+                
+                [Outro]
+                Si una mujer te cela sin razón ni medida,
+                desconfía, porque en su alma hay mentira escondida.
+                El lobo siempre aúlla, aunque se vista de oveja,
+                y al final, el que más ama, siempre queda en la queja.
+                
+                Pero hoy me levanto, hoy rompo esta cadena,
+                porque el amor verdadero no se basa en condena.
+                Que esta historia sirva de lección y de verdad:
+                no hay loba que doblegue un corazón de paz.
+                
+                [LOCUTOR]
+                Esta es una historia de la vida Real, ya todos saben su final
+                Saludos a mi hermano El mono Parra, mi confidente allá en San Bernardo
+                Inojosa Soul. Tu Poeta 
+                </pre>
+        </div>
+    </div>
+
+    <!-- Modales para la segunda canción -->
+    <div id="description2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Segunda Canción</h2>
+            <p> La canción es una celebración del amor y la pasión, donde el protagonista expresa cómo su pareja ha
+                transformado su vida, llenándola de luz, ritmo y poesía. Combina elementos de reguetón con un enfoque
+                romántico, creando un balance perfecto entre lo sensual y lo emocional. Es un himno al deseo y a la
+                conexión profunda entre dos personas..</p>
+        </div>
+    </div>
+    <div id="lyrics2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Segunda Canción</h2>
+            <pre>
+                [Intro]
+                Mami bella, tú eres mi estrella
+                Cuando llegas a mi casa todo se sella
+                Mis noches solitarias ya no son tan largas
+                Porque tú las llenas
+                
+                [Verso 1] 
+                [Merengue]
+                Tu silueta en mi camisa, mi fantasía
+                Cuando te la pones, despiertas mi alegría
+                Tu perfume en ella es como una caricia
+                Y al verte así, baby, pierdo la razon
+                
+                [Pre-Coro]
+                Cuando tú entras, todo se ilumina
+                Tu presencia aquí es mi medicina
+                
+                [Coro]
+                [Reguetón]
+                Bésame la boca, pégate a mi piel
+                una noche es poco pa' tanto querer
+                Eres mi ritmo, mi luz, mi poesía
+                la dueña de todas mis melodías
+                
+                [Verso 2] 
+                [Reguetón]
+                Mami, con mi camisa vas caminando
+                Como una diosa que me va enamorando
+                Tus piernas descubiertas van brillando
+                Y en mi mente tu imagen va bailando
+                
+                [Puente]
+                Cuando me miras así, pierdo la calma
+                Tus ojos me roban todita el alma
+                Tus dulces labios me esclavizan
+                Esta noche, mami, me hipnotizas
+                
+                [Coro]
+                 [Merengue-Reguetón]
+                Bésame la boca, pégate a mi piel
+                Una noche es poco pa' tanto querer
+                Dos noches seguidas, voy' a enloquecer
+                Mi reina bonita, me haces estremecer
+                En mi cama baby, te quiero tener
+                </pre>
+        </div>
+    </div>
+
+    <!-- Modales para la tercera canción -->
+    <div id="description3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Tercera Canción</h2>
+            <p>Esta canción es un canto al amor profundo y devoto, donde el protagonista expresa su admiración y
+                conexión espiritual con su amada. Con un lenguaje lírico y lleno de metáforas, la letra evoca la esencia
+                de la bachata: pasión, nostalgia y romanticismo. El narrador describe a su pareja como su musa, su
+                refugio y su razón de ser, utilizando imágenes poéticas como "mi poema en el cielo" o "el trazo perfecto
+                en mi lienzo". La canción combina la sensualidad de la bachata tradicional con un toque moderno,
+                resaltando la belleza física y emocional de la amada.</p>
+        </div>
+    </div>
+    <div id="lyrics3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Tercera Canción</h2>
+            <pre>[Verso 1]
+                Ponte bonita, amor, que el mundo espera (¡eh, eh!)
+                Esa sonrisa tuya que en mi alma prospera (mami)
+                Hoy quiero verte sin miedos (sin ropa)
+                Serás mi musa, mi poema en el cielo (uh, uh)
+                Tu dulce encanto es mi mayor desvelo (yeah)
+                
+                [Pre-coro]
+                Eres bajita, de poca estatura (pa’ mí)
+                Pero en mi corazón, eres mi razón (¡ah!)
+                Mi karma y mi cielo, mi dulce verdad (eh)
+                Te pido sincero, dame un poco de paz (uh)
+                
+                [Coro]
+                Plasmemos tu belleza en un recuerdo eterno (uh)
+                En tu retrato encuentro lo que quiero (eh)
+                Cuando la tristeza me quiera alcanzar,
+                Miraré tu imagen y volveré a soñar (¡dale!)
+                
+                [Verso 2]
+                No son solo fotos, es grabarte en mi ser (¡yeah!)
+                Cada gesto tuyo me hace florecer (uh)
+                En las noches largas de mi soledad (oh)
+                Tu imagen sagrada me hace despertar (¡sí!)
+                
+                [Puente]
+                Déjame verte, sin filtros, pura y real (eh, eh)
+                Eres el trazo perfecto en mi lienzo (oh, oh)
+                Mi karma, mi dulce verdad (¡yeah!)
+                En tu ser, el amor se lanza (uh-uh, mami)
+                
+                [Coro]
+                Plasmemos tu esencia en un recuerdo eterno (uh)
+                En tus ojos encuentro mi refugio interno (¡ah!)
+                Cuando la tristeza me quiera alcanzar (yeah)
+                Pensaré en tus gestos y volveré a soñar (¡dale!)
+                
+                [Verso 3]
+                La primera vez que te vi, cambió mi realidad (realidad)
+                Un segundo bastó para borrar la soledad (soledad)
+                Ahora somos historia, un cuento aún sin final (oh)
+                Donde cada capítulo me enseña a amar (uh)
+                
+                [Outro]
+                Ponte bonita, amor, y deja el mundo atrás (¡uh!)
+                Porque contigo aprendo lo que es paz (paz)
+                En tus imágenes vive el infinito real (real)
+                Mi refugio eterno, mi dulce final (yeah)
+                
+                [Locutor]
+                Inojosa Soul – Tu poeta, cantando al amor.
+                
+                
+                </pre>
+        </div>
+    </div>
+
+    <script>
+        function showModal(id) {
+            // Ocultar todos los modales
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+
+            // Mostrar el modal específico
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
